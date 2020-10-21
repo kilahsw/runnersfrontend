@@ -1,8 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, Link, Switch } from "react-router-dom";
+import Display from "./Display";
+import Form from "./Form";
 
 function App() {
+  //url variable
+  const url = "https://runnersbackend.herokuapp.com"
+  
+  //state to hold shoes
+  const [shoes, setShoes] = React.useState([])
+
   return (
     <div className="App">
       <header className="App-header">
