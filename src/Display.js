@@ -2,26 +2,27 @@ import React from "react"
 
 const Display = (props) => {
 
-    const { runners } = props;
+    const { shoes } = props;
+    console.log('props', props)
     const loaded = () => (
         <div style={{ textAlign: "center" }}>
-            {runners.map((runners) => (
+            {shoes.map((shoes) => (
                 <article>
-                    {/* <img src={shoes.img} /> */}
-                    <h1>{runners.name}</h1>
-                    <h3>{runners.runType}</h3>
+                    <img src={shoes.img} />
+                    <h1>{shoes.name}</h1>
+                    <h3>{shoes.runType}</h3>
                     <button onClick={() => {
-                        props.selectRunners(runners)
+                        props.selectShoes(shoes)
                         props.history.push('/edit')
                     }}>Edit</button>
                     <button onClick={() => {
-                        props.deleteRunners(runners)
+                        props.deleteShoes(shoes)
                     }}>Delete</button>
                 </article>
             ))}
         </div>
     );
-    return <h1>TEST</h1>
+    return shoes.length > 0 ? loaded() : <h1>Loading...</h1>;
 };
 
 export default Display;
