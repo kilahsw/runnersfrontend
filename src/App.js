@@ -29,6 +29,7 @@ function App() {
       .then(response => response.json())
       .then(data => {
         setRunners(data)
+        console.log('data', data)
       })
   }
 
@@ -79,7 +80,6 @@ function App() {
   return (
     <div className="App">
       <h1>Runners and Shoes</h1>
-      <hr />
       <Link to="/create">
         <button>Add Shoes</button>
       </Link>
