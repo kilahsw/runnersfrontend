@@ -26,7 +26,7 @@ function App() {
 
   //fetch shoes
   const getShoes = () => {
-    fetch(url + "/shoes")
+    fetch(url + "/")
       .then((response) => response.json())
       .then((data) => {
         setShoes(data);
@@ -86,7 +86,7 @@ function App() {
       </Link>
       <main>
         <Switch>
-          <Route exact path="/shoes"
+          <Route exact path="/"
             render={(rp) => (
               <Display
                 {...rp}
